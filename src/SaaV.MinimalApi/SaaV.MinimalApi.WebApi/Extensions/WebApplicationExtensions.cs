@@ -1,5 +1,6 @@
 ﻿using SaaV.MinimalApi.Core.Domain;
 using SaaV.MinimalApi.WebApi.Endpoints;
+using SaaV.MinimalApi.WebApi.Models;
 
 namespace SaaV.MinimalApi.WebApi.Extensions
 {
@@ -24,12 +25,14 @@ namespace SaaV.MinimalApi.WebApi.Extensions
             builder.MapPost("/", DummiesEndpoints.CreateDummy)
                 .WithName("CreateDummy")
                 .WithDescription("Creates a dummy")
+                .Accepts<CreateDummyModel>("application/json")
                 .Produces<GetDummyResponse>(StatusCodes.Status201Created)
                 .WithOpenApi();
 
             builder.MapPut("/{id}", DummiesEndpoints.UpdateDummy)
                 .WithName("UpdateDummy")
                 .WithDescription("Updates a dummy")
+                .Accepts<UpdateDummyModel>("application/json")
                 .Produces<GetDummyResponse>(StatusCodes.Status200OK)
                 .WithOpenApi();
 
