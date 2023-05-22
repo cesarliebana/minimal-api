@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\SaaV.MinimalApi.WebApi.props" />
-</Project>
