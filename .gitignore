@@ -348,3 +348,4 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/src/SaaV.MinimalApi/.vs/SaaV.MinimalApi/DesignTimeBuild/.dtbcache.v2
