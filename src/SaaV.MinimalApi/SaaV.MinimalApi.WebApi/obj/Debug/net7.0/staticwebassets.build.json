@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "cZmEHdVGNV2v2asjehRu1DZXsHtmjYvbGZ08ijjuN40=",
+  "Source": "SaaV.MinimalApi.WebApi",
+  "BasePath": "_content/SaaV.MinimalApi.WebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
