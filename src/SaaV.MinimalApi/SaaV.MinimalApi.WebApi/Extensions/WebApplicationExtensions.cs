@@ -17,16 +17,19 @@ namespace SaaV.MinimalApi.WebApi.Extensions
             builder.MapGet("/{id}", DummiesEndpoints.GetDummyById)                
                 .WithName("GetDummyById")
                 .WithDescription("Gets a dummy with an id")
+                .Produces<GetDummyResponse>()
                 .WithOpenApi();
 
             builder.MapPost("/", DummiesEndpoints.CreateDummy)
                 .WithName("CreateDummy")
                 .WithDescription("Creates a dummy")
+                .Produces<GetDummyResponse>()
                 .WithOpenApi();
 
             builder.MapPut("/{id}", DummiesEndpoints.UpdateDummy)
                 .WithName("UpdateDummy")
                 .WithDescription("Updates a dummy")
+                .Produces<GetDummyResponse>()
                 .WithOpenApi();
 
             builder.MapDelete("/{id}", DummiesEndpoints.DeleteDummy)
