@@ -21,7 +21,7 @@ namespace SaaV.MinimalApi.WebApi.Endpoints
             CreateDummyRequest createDummyRequest = new(createDummyModel.Name);
             GetDummyResponse createDummyResponse = createDummyUseCase.Handle(createDummyRequest);
             
-            return Results.Ok(createDummyResponse);
+            return Results.Created($"/dummies/{createDummyResponse.Id}", createDummyResponse);
         }
 
         public static IResult UpdateDummy(int id, UpdateDummyModel updateDummyModel, IUseCase<UpdateDummyRequest, GetDummyResponse> updateDummyUseCase)

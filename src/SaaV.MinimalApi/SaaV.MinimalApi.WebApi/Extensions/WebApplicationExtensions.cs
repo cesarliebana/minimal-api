@@ -11,30 +11,32 @@ namespace SaaV.MinimalApi.WebApi.Extensions
             builder.MapGet("/", DummiesEndpoints.GetAllDummies)
                 .WithName("GetAllDummies")
                 .WithDescription("Gets all dummies")
-                .Produces<GetAllDummiesResponse>()
+                .Produces<GetAllDummiesResponse>(StatusCodes.Status200OK)
                 .WithOpenApi();
 
             builder.MapGet("/{id}", DummiesEndpoints.GetDummyById)                
                 .WithName("GetDummyById")
                 .WithDescription("Gets a dummy with an id")
-                .Produces<GetDummyResponse>()
+                .Produces<GetDummyResponse>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status404NotFound)
                 .WithOpenApi();
 
             builder.MapPost("/", DummiesEndpoints.CreateDummy)
                 .WithName("CreateDummy")
                 .WithDescription("Creates a dummy")
-                .Produces<GetDummyResponse>()
+                .Produces<GetDummyResponse>(StatusCodes.Status201Created)
                 .WithOpenApi();
 
             builder.MapPut("/{id}", DummiesEndpoints.UpdateDummy)
                 .WithName("UpdateDummy")
                 .WithDescription("Updates a dummy")
-                .Produces<GetDummyResponse>()
+                .Produces<GetDummyResponse>(StatusCodes.Status200OK)
                 .WithOpenApi();
 
             builder.MapDelete("/{id}", DummiesEndpoints.DeleteDummy)
                 .WithName("DeleteDummy")
                 .WithDescription("Deletes a dummy")
+                .Produces(StatusCodes.Status204NoContent)
                 .WithOpenApi();
         }
     }
