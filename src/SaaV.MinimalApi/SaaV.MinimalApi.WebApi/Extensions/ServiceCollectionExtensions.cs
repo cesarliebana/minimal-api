@@ -8,7 +8,7 @@ namespace SaaV.MinimalApi.WebApi.Extensions
     {
         public static void AddUseCaseServices(this IServiceCollection services)
         {
-            // Add Dummy use cases to the container.
+            // Add Dummy use cases to the container
             services.AddTransient<IUseCase<GetDummyRequest, GetDummyResponse>, GetDummyByIdUseCase>();
             services.AddTransient<INoRequestUseCase<GetAllDummiesResponse>, GetAllDummiesUseCase>();
             services.AddTransient<IUseCase<CreateDummyRequest, GetDummyResponse>, CreateDummyUseCase>();
